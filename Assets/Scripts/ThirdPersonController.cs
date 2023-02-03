@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 using FishNet;
 using FishNet.Object;
 using Cinemachine;
+using System;
+using System.Collections;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -78,6 +80,9 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        public float minAttackTime;
+        private float lastAttackTime;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -100,6 +105,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDPunch;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -110,6 +116,8 @@ namespace StarterAssets
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
+
+        [SerializeField] private bool isAttacking = false;
 
         private bool _hasAnimator;
 
@@ -149,6 +157,8 @@ namespace StarterAssets
 
         private void Start()
         {
+            lastAttackTime = Time.time;
+
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             
             _hasAnimator = TryGetComponent(out _animator);
@@ -189,6 +199,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDPunch = Animator.StringToHash("Punch");
         }
 
         private void GroundedCheck()
@@ -230,7 +241,7 @@ namespace StarterAssets
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed = isAttacking ? MoveSpeed : SprintSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -391,7 +402,7 @@ namespace StarterAssets
             {
                 if (FootstepAudioClips.Length > 0)
                 {
-                    var index = Random.Range(0, FootstepAudioClips.Length);
+                    var index = UnityEngine.Random.Range(0, FootstepAudioClips.Length);
                     AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
                 }
             }
@@ -406,9 +417,32 @@ namespace StarterAssets
         }
 
         private void Attack() {
+
+            if ((lastAttackTime + minAttackTime) > Time.time) return;
             if (_input.attack) {
-                Debug.Log("Attack");
+                StartCoroutine("AttackCoroutine");
+
+                lastAttackTime = Time.time;
+                _input.attack = false;
             }
+        }
+
+        IEnumerator AttackCoroutine() {
+            isAttacking = true;
+            _animator.SetLayerWeight(1, 1f);
+            
+            _animator.SetTrigger(_animIDPunch);
+            Debug.Log("Attack");
+            yield return new WaitForSeconds(.5f);
+            _animator.SetLayerWeight(1, 0f);
+            isAttacking = false;
+        }
+
+
+        [ServerRpc]
+        public void ServerDamagePlayer(GameObject player, Vector3 pos)
+        {
+            
         }
     }
 }
