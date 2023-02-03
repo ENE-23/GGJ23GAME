@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1347.9722, g: 1132.161, b: 1217.4443, a: 1}
+  m_IndirectSpecularColor: {r: 1348.2876, g: 1132.4268, b: 1217.4863, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -777,7 +777,7 @@ MonoBehaviour:
   _ipv6BindAddress: 
   _port: 20754
   _maximumClients: 5
-  _clientAddress: localhost
+  _clientAddress: 13.38.118.123
   _timeout: 15
 --- !u!1001 &746329221
 PrefabInstance:

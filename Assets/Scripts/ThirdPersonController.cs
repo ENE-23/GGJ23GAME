@@ -121,6 +121,8 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+        public LayerMask playerLayer;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -419,30 +421,45 @@ namespace StarterAssets
         private void Attack() {
 
             if ((lastAttackTime + minAttackTime) > Time.time) return;
-            if (_input.attack) {
-                StartCoroutine("AttackCoroutine");
-
+            if (_input.attack && !isAttacking && GetPlayerUnderMouse() != null) {
+               
                 lastAttackTime = Time.time;
+                StartCoroutine("AttackCoroutine");
                 _input.attack = false;
             }
         }
 
         IEnumerator AttackCoroutine() {
             isAttacking = true;
-            _animator.SetLayerWeight(1, 1f);
-            
+            //_animator.SetLayerWeight(1, 1f);
+            ServerDamagePlayer(GetPlayerUnderMouse(), transform.position);
             _animator.SetTrigger(_animIDPunch);
             Debug.Log("Attack");
             yield return new WaitForSeconds(.5f);
-            _animator.SetLayerWeight(1, 0f);
+            //_animator.SetLayerWeight(1, 0f);
             isAttacking = false;
         }
 
 
+        private GameObject GetPlayerUnderMouse()
+        {
+            GameObject g = null;
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity,playerLayer))
+            {
+                g = hit.transform.gameObject;
+                //Debug.Log(hit.transform.name);
+            }
+            if (g == gameObject) g = null;
+            return g;
+        }
+
         [ServerRpc]
         public void ServerDamagePlayer(GameObject player, Vector3 pos)
         {
-            
+            player.GetComponent<HealthScript>().lifes -= 1;
+            player.GetComponent<HealthScript>().BeingHit();
         }
     }
 }

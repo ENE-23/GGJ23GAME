@@ -1040,6 +1040,7 @@ GameObject:
   - component: {fileID: 2874332405172338780}
   - component: {fileID: -6266970302185551041}
   - component: {fileID: 4283018799172510590}
+  - component: {fileID: -8501464279520687572}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1152,8 +1153,11 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
-  minAttackTime: 0.2
+  minAttackTime: 1.5
   isAttacking: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &5885216827943657505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,6 +1312,7 @@ MonoBehaviour:
   - {fileID: 4416926081852918490}
   - {fileID: -6266970302185551041}
   - {fileID: 4283018799172510590}
+  - {fileID: -8501464279520687572}
   <ParentNetworkObject>k__BackingField: {fileID: 0}
   <ChildNetworkObjects>k__BackingField: []
   _isNetworked: 1
@@ -1385,6 +1390,22 @@ MonoBehaviour:
   _interpolation: 2
   _clientAuthoritative: 1
   _sendToOwner: 0
+--- !u!114 &-8501464279520687572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8c431e9b4c4984c9f801be09105c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentIndexCache: 3
+  _addedNetworkObject: {fileID: 2874332405172338780}
+  _networkObjectCache: {fileID: 2874332405172338780}
+  lifes: 3
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0
