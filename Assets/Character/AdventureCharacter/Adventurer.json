@@ -1,0 +1,382 @@
+﻿{
+    "Adventurer": {
+        "Version": "1.10.1822.1",
+        "Scene": {
+            "Name": true,
+            "SupportShaderSelect": true
+        },
+        "Object": {
+            "Adventurer": {
+                "Generation": "AccuRig",
+                "Physics": {},
+                "Meshes": {
+                    "Cube_001": {
+                        "Materials": {
+                            "Grey_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    12.675284385681153,
+                                    12.675284385681153,
+                                    12.675284385681153
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    12.675284385681153,
+                                    12.675284385681153,
+                                    12.675284385681153
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Black_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    4.4987101554870609,
+                                    4.4987101554870609,
+                                    4.4987101554870609
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    4.4987101554870609,
+                                    4.4987101554870609,
+                                    4.4987101554870609
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            }
+                        }
+                    },
+                    "Cube_002": {
+                        "Materials": {
+                            "Brown_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    45.60929870605469,
+                                    32.32711410522461,
+                                    13.085834503173829
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    45.60929870605469,
+                                    32.32711410522461,
+                                    13.085834503173829
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Brown2_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    27.165660858154298,
+                                    19.46057891845703,
+                                    8.166629791259766
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    27.165660858154298,
+                                    19.46057891845703,
+                                    8.166629791259766
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            }
+                        }
+                    },
+                    "Cube_039": {
+                        "Materials": {
+                            "Skin_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    157.38778686523438,
+                                    106.56067657470703,
+                                    60.79148864746094
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    157.38778686523438,
+                                    106.56067657470703,
+                                    60.79148864746094
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Eyebrows_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    12.283860206604004,
+                                    8.75670051574707,
+                                    5.654370307922363
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    12.283860206604004,
+                                    8.75670051574707,
+                                    5.654370307922363
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Hair_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    17.035274505615236,
+                                    6.983429908752441,
+                                    2.3016300201416017
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    17.035274505615236,
+                                    6.983429908752441,
+                                    2.3016300201416017
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Eye_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    7.920809745788574,
+                                    4.6310553550720219,
+                                    2.883540153503418
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    7.920809745788574,
+                                    4.6310553550720219,
+                                    2.883540153503418
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            }
+                        }
+                    },
+                    "Cube_063": {
+                        "Materials": {
+                            "Skin_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    157.38778686523438,
+                                    106.56067657470703,
+                                    60.79148864746094
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    157.38778686523438,
+                                    106.56067657470703,
+                                    60.79148864746094
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Green_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    15.4830904006958,
+                                    12.880049705505371,
+                                    4.815419673919678
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    15.4830904006958,
+                                    12.880049705505371,
+                                    4.815419673919678
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "LightGreen_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    25.118011474609376,
+                                    21.634965896606447,
+                                    9.447750091552735
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    25.118011474609376,
+                                    21.634965896606447,
+                                    9.447750091552735
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            }
+                        }
+                    },
+                    "Plane": {
+                        "Materials": {
+                            "Brown_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    45.60929870605469,
+                                    32.32711410522461,
+                                    13.085834503173829
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    45.60929870605469,
+                                    32.32711410522461,
+                                    13.085834503173829
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Green_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    15.4830904006958,
+                                    12.880049705505371,
+                                    4.815419673919678
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    15.4830904006958,
+                                    12.880049705505371,
+                                    4.815419673919678
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "LightGreen_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    25.118011474609376,
+                                    21.634965896606447,
+                                    9.447750091552735
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    25.118011474609376,
+                                    21.634965896606447,
+                                    9.447750091552735
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            },
+                            "Gold_Pbr": {
+                                "Material Type": "Pbr",
+                                "MultiUV Index": 0,
+                                "Two Side": true,
+                                "Diffuse Color": [
+                                    71.11797332763672,
+                                    44.53498458862305,
+                                    10.084230422973633
+                                ],
+                                "Ambient Color": [
+                                    5.196389675140381,
+                                    5.196389675140381,
+                                    5.196389675140381
+                                ],
+                                "Specular Color": [
+                                    71.11797332763672,
+                                    44.53498458862305,
+                                    10.084230422973633
+                                ],
+                                "Opacity": 1.0,
+                                "Self Illumination": 0.0,
+                                "Textures": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
