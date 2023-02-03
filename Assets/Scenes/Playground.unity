@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1348.0757, g: 1132.2451, b: 1217.374, a: 1}
+  m_IndirectSpecularColor: {r: 1347.9214, g: 1132.1514, b: 1217.3604, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -777,7 +777,7 @@ MonoBehaviour:
   _ipv6BindAddress: 
   _port: 7770
   _maximumClients: 5
-  _clientAddress: localhost
+  _clientAddress: 172.30.226.22
   _timeout: 15
 --- !u!1001 &746329221
 PrefabInstance:
@@ -1762,16 +1762,6 @@ MonoBehaviour:
   m_Script: {fileID: 1468576833}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries:
-  - id: 0
-    category: 0
-    gameObject: {fileID: 1028513131}
-  - id: 1
-    category: 0
-    gameObject: {fileID: 542508511}
-  - id: 2
-    category: 0
-    gameObject: {fileID: 1764214107}
 --- !u!4 &1296224953
 Transform:
   m_ObjectHideFlags: 19
