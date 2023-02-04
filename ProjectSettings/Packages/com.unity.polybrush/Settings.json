@@ -41,7 +41,7 @@
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "RaiseLowerBrush.IgnoreOpenEdges",
-                "value": "{\"m_Value\":true}"
+                "value": "{\"m_Value\":false}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
@@ -86,7 +86,7 @@
             {
                 "type": "UnityEngine.Polybrush.MirrorCoordinateSpace, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "Brush.MirrorSpace",
-                "value": "{\"m_Value\":1}"
+                "value": "{\"m_Value\":0}"
             },
             {
                 "type": "UnityEngine.Polybrush.PolyDirection, Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
@@ -101,12 +101,17 @@
             {
                 "type": "UnityEditor.Polybrush.PrefabLoadout, Unity.Polybrush.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ScatteringEditor.userLoadout",
-                "value": "{\"m_Value\":{\"infos\":[]}}"
+                "value": "{\"m_Value\":{\"infos\":[{\"palette\":{\"fileID\":11400000,\"guid\":\"fc5e4d73609160743b7b8bbb42c869cb\",\"type\":2},\"prefab\":{\"fileID\":8349557293313463349,\"guid\":\"2ddcb5c4fa12e174ea919c134b417a17\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"fc5e4d73609160743b7b8bbb42c869cb\",\"type\":2},\"prefab\":{\"fileID\":9033247345699629101,\"guid\":\"835868473d59e8044b5b04c71479f55b\",\"type\":3}},{\"palette\":{\"fileID\":11400000,\"guid\":\"fc5e4d73609160743b7b8bbb42c869cb\",\"type\":2},\"prefab\":{\"fileID\":8367685199092209672,\"guid\":\"515055cbd7de47c4bb8171c36c32b82a\",\"type\":3}}]}}"
             },
             {
                 "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "ScatteringEditor.PreviewThumSize",
-                "value": "{\"m_Value\":64}"
+                "value": "{\"m_Value\":68}"
+            },
+            {
+                "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "GI.WorkflowMode",
+                "value": "{\"m_Value\":1}"
             }
         ]
     }
