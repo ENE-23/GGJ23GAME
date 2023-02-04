@@ -115,6 +115,8 @@ namespace StarterAssets
         private CharacterController _controller;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
+        [SerializeField] GameObject _gameManagerOBJ;
+        [SerializeField] GameManager _gameManager;
 
         private const float _threshold = 0.01f;
 
@@ -156,6 +158,8 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+
+                //_gameManagerOBJ = GameObject.FindGameObjectWithTag("GameController");
         }
 
         private void Start()
@@ -178,6 +182,9 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            _gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
         }
 
         private void Update()
@@ -426,6 +433,9 @@ namespace StarterAssets
             if (_input.attack) {
                 _input.attack = false;
                 if (isAttacking || GetPlayerUnderMouse() == null) return;
+                //_gameManager.AddPointToTeam(gameObject.GetComponent<TeamManager>().teamID, 1);
+                //_gameManager.FirstTeamScore += 1;
+                AddPointToTeam(gameObject.GetComponent<TeamManager>().teamID, 1);
                 lastAttackTime = Time.time;
                 StartCoroutine("AttackCoroutine");
                 
@@ -454,7 +464,7 @@ namespace StarterAssets
             if (Physics.Raycast(ray, out hit, Mathf.Infinity,playerLayer))
             {
                 g = hit.transform.gameObject;
-                if (g.GetComponent<TeamManager>().teamID != gameObject.GetComponent<TeamManager>().teamID) g = null;
+                if (g.GetComponent<TeamManager>().teamID == gameObject.GetComponent<TeamManager>().teamID) g = null;
                 //Debug.Log(hit.transform.name);
             }
             
@@ -467,6 +477,14 @@ namespace StarterAssets
         {
             player.GetComponent<HealthScript>().lifes -= 1;
             player.GetComponent<HealthScript>().BeingHit();
+        }
+
+        [ServerRpc]
+        public void AddPointToTeam(int team, int score)
+        {
+            Debug.LogWarning("Point Added to TEAM: " + team);
+            if (team == 1) _gameManager.FirstTeamScore += score;
+            else _gameManager.SecondTeamScore += score;
         }
     }
 }

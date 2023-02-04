@@ -54,6 +54,7 @@ public class GlowHover : NetworkBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, playerLayer))
         {
             g = hit.transform.gameObject;
+            if (g.GetComponent<TeamManager>().teamID == gameObject.GetComponent<TeamManager>().teamID) g = null;
             //Debug.Log(hit.transform.name);
         }
         if (g == gameObject) g = null;

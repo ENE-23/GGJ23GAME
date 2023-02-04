@@ -192,6 +192,8 @@ MonoBehaviour:
   CameraAngleOverride: 0
   LockCameraPosition: 0
   minAttackTime: 0
+  _gameManagerOBJ: {fileID: 0}
+  _gameManager: {fileID: 0}
   isAttacking: 0
   playerLayer:
     serializedVersion: 2

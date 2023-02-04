@@ -1247,8 +1247,8 @@ GameObject:
   - component: {fileID: -8501464279520687572}
   - component: {fileID: 6104725912705944462}
   - component: {fileID: -2004488056077838148}
-  m_Layer: 8
-  m_Name: PlayerArmature
+  m_Layer: 10
+  m_Name: PlayerArmature 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   <SpawnableCollectionId>k__BackingField: 0
   _scenePathHash: 0
   <SceneId>k__BackingField: 0
-  <AssetPathHash>k__BackingField: 2013018530153741903
+  <AssetPathHash>k__BackingField: 15676441304836064573
   _sceneNetworkObjects: []
 --- !u!114 &-6266970302185551041
 MonoBehaviour:
@@ -3323,16 +3323,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -381813403878800884, guid: 33adf99fdd520ed4ba8daf87095b5c88,
-        type: 3}
-      propertyPath: m_Materials.Array.data[4]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7302be1337eaaf14b92531e1580cfaa1, type: 2}
-    - target: {fileID: -381813403878800884, guid: 33adf99fdd520ed4ba8daf87095b5c88,
-        type: 3}
-      propertyPath: m_Materials.Array.data[6]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7302be1337eaaf14b92531e1580cfaa1, type: 2}
     - target: {fileID: 919132149155446097, guid: 33adf99fdd520ed4ba8daf87095b5c88,
         type: 3}
       propertyPath: m_Name

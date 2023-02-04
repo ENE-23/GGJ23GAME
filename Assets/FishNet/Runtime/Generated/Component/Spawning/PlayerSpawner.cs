@@ -86,6 +86,7 @@ namespace FishNet.Component.Spawning
         /// </summary>
         private void SceneManager_OnClientLoadedStartScenes(NetworkConnection conn, bool asServer)
         {
+
             if (!asServer)
                 return;
             if (_playerPrefab == null)

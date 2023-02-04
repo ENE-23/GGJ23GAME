@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet;
+using FishNet.Authenticating;
 using FishNet.Object.Synchronizing;
 using FishNet.Object;
 using TMPro;
@@ -17,7 +19,7 @@ public class TeamManager : NetworkBehaviour
         base.OnStartClient();
         if (!base.IsOwner) return;
             
-        UpdateTeam();
+        UpdateTeam(LocalConnection.ClientId);
         text.text = teamID.ToString();
     }
     // Start is called before the first frame update
@@ -34,8 +36,8 @@ public class TeamManager : NetworkBehaviour
     }
 
     [ServerRpc]
-    public void UpdateTeam()
+    public void UpdateTeam(int conID)
     {
-        teamID = UnityEngine.Random.Range(0, 2);
+        teamID = ((conID+1) % 2);
     }
 }
