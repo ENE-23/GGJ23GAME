@@ -407,7 +407,7 @@ namespace StarterAssets
                 if (FootstepAudioClips.Length > 0)
                 {
                     var index = UnityEngine.Random.Range(0, FootstepAudioClips.Length);
-                    AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                    //AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
                 }
             }
         }
@@ -416,18 +416,19 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                //AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
 
         private void Attack() {
 
             if ((lastAttackTime + minAttackTime) > Time.time) return;
-            if (_input.attack && !isAttacking && GetPlayerUnderMouse() != null) {
-               
+            if (_input.attack) {
+                _input.attack = false;
+                if (isAttacking || GetPlayerUnderMouse() == null) return;
                 lastAttackTime = Time.time;
                 StartCoroutine("AttackCoroutine");
-                _input.attack = false;
+                
             }
         }
 
@@ -453,8 +454,10 @@ namespace StarterAssets
             if (Physics.Raycast(ray, out hit, Mathf.Infinity,playerLayer))
             {
                 g = hit.transform.gameObject;
+                if (g.GetComponent<TeamManager>().teamID != gameObject.GetComponent<TeamManager>().teamID) g = null;
                 //Debug.Log(hit.transform.name);
             }
+            
             if (g == gameObject) g = null;
             return g;
         }

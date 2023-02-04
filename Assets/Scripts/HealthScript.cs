@@ -9,11 +9,20 @@ public class HealthScript : NetworkBehaviour
     [SyncVar] public int lifes = 3;
 
     ThirdPersonController thirdPersonController;
-    
+    Animator _animator;
+    private int animIDIsHit;
 
     private void Start()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
+        _animator = GetComponent<Animator>();
+        animIDIsHit = Animator.StringToHash("isHit");
+    }
+
+    private void Update()
+    {
+        if (!base.IsOwner) return;
+        if (lifes <= 0) thirdPersonController.enabled = false;
     }
 
     private void OnBeingHit() {
@@ -24,13 +33,17 @@ public class HealthScript : NetworkBehaviour
 
     public void BeingHit() {
         if (!base.IsOwner) return;
+        if (lifes <= 0) return;
         StartCoroutine(HitCoroutine());
     }
 
     IEnumerator HitCoroutine() {
+        
         yield return new WaitForEndOfFrame();
+        _animator.SetBool("isHit", true);
         thirdPersonController.enabled = false;
         yield return new WaitForSeconds(1f);
         thirdPersonController.enabled = true;
+        _animator.SetBool("isHit", false);
     }
 }
