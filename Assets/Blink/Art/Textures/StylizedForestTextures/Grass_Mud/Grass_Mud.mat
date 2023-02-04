@@ -13,6 +13,7 @@ Material:
   - _DISABLE_SSR_TRANSPARENT
   - _DISPLACEMENT_LOCK_TILING_SCALE
   - _HEIGHTMAP
+  - _MAPPING_TRIPLANAR
   - _MASKMAP
   - _NORMALMAP
   - _NORMALMAP_TANGENT_SPACE
@@ -214,7 +215,7 @@ Material:
     - _HeightPoMAmplitude: 0.16
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
-    - _InvTilingScale: 1
+    - _InvTilingScale: 6.6666665
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
@@ -258,7 +259,7 @@ Material:
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _SurfaceType: 0
-    - _TexWorldScale: 1
+    - _TexWorldScale: 0.15
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
     - _TransmissionEnable: 1
@@ -269,7 +270,7 @@ Material:
     - _TransparentSortPriority: 0
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
-    - _UVBase: 0
+    - _UVBase: 5
     - _UVDetail: 0
     - _UVEmissive: 0
     - _UVSec: 0
@@ -294,7 +295,7 @@ Material:
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
-    - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
+    - _UVMappingMask: {r: 0, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4411064897940052323
