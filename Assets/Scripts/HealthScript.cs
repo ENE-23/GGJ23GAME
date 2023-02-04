@@ -7,7 +7,7 @@ using StarterAssets;
 public class HealthScript : NetworkBehaviour
 {
     [SyncVar] public int lifes = 3;
-
+    [SyncVar] public bool isDead = false;
     ThirdPersonController thirdPersonController;
     Animator _animator;
     private int animIDIsHit;
@@ -31,10 +31,14 @@ public class HealthScript : NetworkBehaviour
         thirdPersonController.enabled = false;
     }
 
+    [Client]
     public void BeingHit() {
-        if (!base.IsOwner) return;
-        if (lifes <= 0) return;
-        StartCoroutine(HitCoroutine());
+        //if (!base.IsOwner) return;
+        if (lifes <= 0) {
+            Debug.Log("isDead");
+            _animator.SetBool("isDead",true);
+        }
+        else StartCoroutine(HitCoroutine());
     }
 
     IEnumerator HitCoroutine() {

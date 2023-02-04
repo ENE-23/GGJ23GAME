@@ -446,6 +446,7 @@ namespace StarterAssets
             isAttacking = true;
             //_animator.SetLayerWeight(1, 1f);
             ServerDamagePlayer(GetPlayerUnderMouse(), transform.position);
+            //GetPlayerUnderMouse().GetComponent<HealthScript>().BeingHit();
             //_animator.SetTrigger(_animIDPunch);
             _animator.SetBool(_animIDPunching, true);
             Debug.Log("Attack");
@@ -477,6 +478,7 @@ namespace StarterAssets
         {
             player.GetComponent<HealthScript>().lifes -= 1;
             player.GetComponent<HealthScript>().BeingHit();
+            //player.GetComponent<Animator>().SetBool("isDead", true);
         }
 
         [ServerRpc]
