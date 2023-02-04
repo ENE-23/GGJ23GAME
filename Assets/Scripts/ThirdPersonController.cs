@@ -461,6 +461,7 @@ namespace StarterAssets
         {
             GameObject g = null;
             RaycastHit hit;
+            
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             if (Physics.Raycast(ray, out hit, Mathf.Infinity,playerLayer))
             {
