@@ -106,6 +106,7 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
         private int _animIDPunch;
+        private int _animIDPunching;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -202,6 +203,7 @@ namespace StarterAssets
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
             _animIDPunch = Animator.StringToHash("Punch");
+            _animIDPunching = Animator.StringToHash("Punching");
         }
 
         private void GroundedCheck()
@@ -433,9 +435,11 @@ namespace StarterAssets
             isAttacking = true;
             //_animator.SetLayerWeight(1, 1f);
             ServerDamagePlayer(GetPlayerUnderMouse(), transform.position);
-            _animator.SetTrigger(_animIDPunch);
+            //_animator.SetTrigger(_animIDPunch);
+            _animator.SetBool(_animIDPunching, true);
             Debug.Log("Attack");
             yield return new WaitForSeconds(.5f);
+            _animator.SetBool(_animIDPunching, false);
             //_animator.SetLayerWeight(1, 0f);
             isAttacking = false;
         }

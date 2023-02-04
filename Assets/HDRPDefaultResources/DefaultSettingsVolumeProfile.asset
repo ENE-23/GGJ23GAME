@@ -599,7 +599,7 @@ MonoBehaviour:
   active: 1
   maxShadowDistance:
     m_OverrideState: 1
-    m_Value: 20.47
+    m_Value: 250
   directionalTransmissionMultiplier:
     m_OverrideState: 1
     m_Value: 1
@@ -608,7 +608,7 @@ MonoBehaviour:
     m_Value: 2
   cascadeShadowSplit0:
     m_OverrideState: 1
-    m_Value: 0.49975574
+    m_Value: 0.22533707
   cascadeShadowSplit1:
     m_OverrideState: 0
     m_Value: 0.31362972
