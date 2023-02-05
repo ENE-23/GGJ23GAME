@@ -433,6 +433,7 @@ namespace StarterAssets
             if (_input.attack) {
                 _input.attack = false;
                 if (isAttacking || GetPlayerUnderMouse() == null) return;
+                if (Vector3.Distance(transform.position, GetPlayerUnderMouse().transform.position) > 1f) return;
                 //_gameManager.AddPointToTeam(gameObject.GetComponent<TeamManager>().teamID, 1);
                 //_gameManager.FirstTeamScore += 1;
                 AddPointToTeam(gameObject.GetComponent<TeamManager>().teamID, 1);

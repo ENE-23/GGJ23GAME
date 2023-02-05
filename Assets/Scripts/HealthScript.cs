@@ -31,7 +31,7 @@ public class HealthScript : NetworkBehaviour
         thirdPersonController.enabled = false;
     }
 
-    [Client]
+    [Server]
     public void BeingHit() {
         //if (!base.IsOwner) return;
         if (lifes <= 0) {

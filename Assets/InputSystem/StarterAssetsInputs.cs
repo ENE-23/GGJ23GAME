@@ -12,6 +12,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool attack;
+		public bool revive;
 		public bool sprint;
 
 		[Header("Movement Settings")]
@@ -45,6 +46,11 @@ namespace StarterAssets
 			AttackInput(value.isPressed);
 		}
 
+		public void OnRevive(InputValue value)
+		{
+			ReviveInput(value.isPressed);
+		}
+
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
@@ -70,6 +76,11 @@ namespace StarterAssets
 		public void AttackInput(bool newAttackState)
 		{
 			attack = newAttackState;
+		}
+
+		public void ReviveInput(bool newReviveState)
+		{
+			revive = newReviveState;
 		}
 
 		public void SprintInput(bool newSprintState)
