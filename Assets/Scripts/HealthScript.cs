@@ -5,6 +5,8 @@ using FishNet.Object.Synchronizing;
 using FishNet.Object;
 using StarterAssets;
 using FishNet.Transporting;
+using UnityEngine.UI;
+
 public class HealthScript : NetworkBehaviour
 {
     [SyncVar(Channel = Channel.Unreliable, ReadPermissions = ReadPermission.Observers, SendRate = 0.1f, OnChange = nameof(OnHit))] public int lifes = 3;
@@ -12,16 +14,21 @@ public class HealthScript : NetworkBehaviour
     ThirdPersonController thirdPersonController;
     Animator _animator;
     private int animIDIsHit;
+    [SerializeField] GameObject rotedGO;
+    [SerializeField] Slider slider;
 
     private void Start()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
         _animator = GetComponent<Animator>();
         animIDIsHit = Animator.StringToHash("isHit");
+        slider.value = lifes;
+
     }
 
     private void Update()
     {
+        slider.gameObject.transform.LookAt(Camera.main.transform);
         if (!base.IsOwner) return;
         thirdPersonController.enabled = !isDead;
     }
@@ -30,6 +37,7 @@ public class HealthScript : NetworkBehaviour
     {
         if (lifes <= 0)
         {
+            rotedGO.SetActive(true);
             Debug.Log("isDead");
             isDead = true;
             _animator.SetBool("isDead", true);
@@ -40,8 +48,12 @@ public class HealthScript : NetworkBehaviour
 
     private void OnDead(bool prev, bool next, bool asServer)
     {
+        slider.value = lifes;
+
         if (!next)
         {
+            rotedGO.SetActive(false);
+
             lifes = 3;
             _animator.SetBool("isDead", false);
             thirdPersonController.enabled = true;
@@ -76,7 +88,8 @@ public class HealthScript : NetworkBehaviour
     }
 
     IEnumerator HitCoroutine() {
-        
+        slider.value = lifes;
+
         yield return new WaitForEndOfFrame();
         _animator.SetBool("isHit", true);
         thirdPersonController.enabled = false;

@@ -11,8 +11,9 @@ public class TeamManager : NetworkBehaviour
 {
 
     [SyncVar] public int teamID;
-    [SerializeField]TMP_Text text;
     int nextTeam = 0;
+    [SerializeField] GameObject hat1;
+    [SerializeField] GameObject hat2;
 
     public override void OnStartClient()
     {
@@ -20,19 +21,42 @@ public class TeamManager : NetworkBehaviour
         if (!base.IsOwner) return;
             
         UpdateTeam(LocalConnection.ClientId);
-        text.text = teamID.ToString();
+
+        
+        //text.text = teamID.ToString();
+        if (teamID == 0)
+        {
+            hat1.SetActive(true);
+            hat2.SetActive(false);
+
+        }
+        else
+        {
+            hat1.SetActive(false);
+            hat2.SetActive(true);
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
-         
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.transform.LookAt(Camera.main.transform);
-        text.text = teamID.ToString();
+        if(teamID == 0)
+        {
+            hat1.SetActive(true);
+            hat2.SetActive(false);
+
+        }
+        else
+        {
+            hat1.SetActive(false);
+            hat2.SetActive(true);
+        }
     }
 
     [ServerRpc]
@@ -40,4 +64,6 @@ public class TeamManager : NetworkBehaviour
     {
         teamID = ((conID+1) % 2);
     }
+
+
 }
