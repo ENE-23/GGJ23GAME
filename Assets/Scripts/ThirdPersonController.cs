@@ -195,7 +195,7 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
-            if (!_gameManager.gameStarted) return;
+            //if (!_gameManager.gameStarted) return;
             Move();
             Attack();
         }

@@ -36,10 +36,12 @@ public class GameManager : NetworkBehaviour
     public override void OnStartClient()
     {
         base.OnStartClient();
+        /**
         if(base.LocalConnection.ClientId == 0)
         {
             adminPanel.SetActive(true);
         }
+        **/
     }
     [ServerRpc]
     public void AddPointToTeam(int team, int score)
