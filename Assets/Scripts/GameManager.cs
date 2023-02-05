@@ -50,7 +50,7 @@ public class GameManager : NetworkBehaviour
 
     private void Update()
     {
-        if (!gameStarted) return;
+        //if (!gameStarted) return;
         UpdateTime();
         firstText.text = FirstTeamScore.ToString();
         secondText.text = SecondTeamScore.ToString();
@@ -95,6 +95,7 @@ public class GameManager : NetworkBehaviour
 
     }
 
+    [ServerRpc]
     public void StartGame()
     {
 
