@@ -38,9 +38,10 @@ public class HelpTeamScript : NetworkBehaviour
                 if (target.GetComponent<HealthScript>().isDead)
                 {
                     Debug.Log("Reviving");
-                    
-                    target.GetComponent<HealthScript>().lifes = 3;
-                    target.GetComponent<HealthScript>().isDead = false;
+
+                    ReviveTeammate(target);
+                    //target.GetComponent<HealthScript>().lifes = 3;
+                    //target.GetComponent<HealthScript>().isDead = false;
                 }
             }
         }
@@ -49,6 +50,12 @@ public class HelpTeamScript : NetworkBehaviour
        
     }
 
+
+    [ServerRpc]
+    private void ReviveTeammate(GameObject target)
+    {
+        target.GetComponent<HealthScript>().isDead = false;
+    }
     private GameObject GetClosestPlayer() {
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");

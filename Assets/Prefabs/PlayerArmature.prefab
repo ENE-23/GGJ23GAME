@@ -1332,7 +1332,7 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 2874332405172338780}
   _networkObjectCache: {fileID: 2874332405172338780}
   MoveSpeed: 0.9
-  SprintSpeed: 3.5
+  SprintSpeed: 5.5
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
@@ -1403,6 +1403,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   attack: 0
+  revive: 0
   sprint: 0
   analogMovement: 0
   cursorLocked: 0
@@ -1527,6 +1528,7 @@ MonoBehaviour:
   - {fileID: -8501464279520687572}
   - {fileID: 6104725912705944462}
   - {fileID: -2004488056077838148}
+  - {fileID: 3908497352973268597}
   <ParentNetworkObject>k__BackingField: {fileID: 0}
   <ChildNetworkObjects>k__BackingField: []
   _isNetworked: 1
@@ -1674,6 +1676,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5656fb80c93da34e898c71b9117a80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentIndexCache: 6
+  _addedNetworkObject: {fileID: 2874332405172338780}
+  _networkObjectCache: {fileID: 2874332405172338780}
+  target: {fileID: 0}
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

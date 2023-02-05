@@ -478,8 +478,9 @@ namespace StarterAssets
         [ServerRpc]
         public void ServerDamagePlayer(GameObject player, Vector3 pos)
         {
+            
             player.GetComponent<HealthScript>().lifes -= 1;
-            player.GetComponent<HealthScript>().BeingHit();
+            //player.GetComponent<HealthScript>().BeingHit();
             //player.GetComponent<Animator>().SetBool("isDead", true);
         }
 
